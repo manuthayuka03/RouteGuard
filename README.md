@@ -68,6 +68,7 @@ Open http://localhost:5173. The temporary login lets you choose Administrator or
 - `web/src/services/api.js` connection to the backend
 - `web/mock/db.json` fake data (add your own collections, do not edit other people's)
 - `web/src/App.jsx` collects every module's routes. Do not edit it. Add your pages in your own `features/<module>/routes.jsx`
+- `web/src/components/` shared pieces: StatusBadge, StatCard, PageHeader, DataTable. See them at /dev/components and use them instead of building your own.
 
 ## Agreed decisions
 
