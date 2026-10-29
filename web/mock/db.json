@@ -1,0 +1,37 @@
+{
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Kamal Perera",
+      "licenceNumber": "B1234567",
+      "phone": "0771234567",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "Nimal Silva",
+      "licenceNumber": "B7654321",
+      "phone": "0712345678",
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "name": "Sunil Fernando",
+      "licenceNumber": "B1112223",
+      "phone": "0759876543",
+      "status": "Inactive"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "registrationNumber": "WP-CAB-1234",
+      "type": "Lorry",
+      "capacity": "10 tons",
+      "status": "Active",
+      "trackerId": "TRK-0098",
+      "trackerModel": "Model X1",
+      "trackerProvider": "Provider A"
+    }
+  ]
+}
