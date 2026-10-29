@@ -1,3 +1,12 @@
+import { Box, Button, Typography } from '@mui/material';
+
 export default function App() {
-  return <h1>RouteGuard</h1>;
+  return (
+    <Box sx={{ p: 4 }}>
+      <Typography variant="h4" fontWeight={700} gutterBottom>
+        RouteGuard
+      </Typography>
+      <Button variant="contained">Primary button</Button>
+    </Box>
+  );
 }
