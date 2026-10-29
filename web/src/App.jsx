@@ -6,6 +6,7 @@ import { adminRoutes } from './features/admin/routes';
 import { transportRoutes } from './features/transport/routes';
 import { monitoringRoutes } from './features/monitoring/routes';
 import { complianceRoutes } from './features/compliance/routes';
+import ComponentsPreview from './components/ComponentsPreview';
 
 // Turns each module's list of pages into router entries.
 const toRoutes = (routes) =>
@@ -19,6 +20,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/dev/components" element={<ComponentsPreview />} />
 
         <Route
           path="/admin"
