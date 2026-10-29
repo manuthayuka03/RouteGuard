@@ -1,20 +1,18 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import DashboardLayout from './layouts/DashboardLayout';
 import { adminMenu, officerMenu } from './layouts/menus';
-import PlaceholderPage from './components/PlaceholderPage';
 import LoginPage from './features/admin/pages/LoginPage';
+import { adminRoutes } from './features/admin/routes';
+import { transportRoutes } from './features/transport/routes';
+import { monitoringRoutes } from './features/monitoring/routes';
+import { complianceRoutes } from './features/compliance/routes';
 
-// Each menu item gets a placeholder page for now.
-// When a member builds a real page, they replace the matching element.
-const placeholderRoutes = (menu) =>
-  menu.map((item) => (
-    <Route
-      key={item.path}
-      path={item.path}
-      element={<PlaceholderPage title={item.title ?? item.label} owner={item.owner} />}
-    />
-  ));
+// Turns each module's list of pages into router entries.
+const toRoutes = (routes) =>
+  routes.map((r) => <Route key={r.path} path={r.path} element={r.element} />);
 
+// Nobody should need to edit this file. Add your pages in your own
+// features/<module>/routes.jsx instead.
 export default function App() {
   return (
     <BrowserRouter>
@@ -27,7 +25,7 @@ export default function App() {
           element={<DashboardLayout menuItems={adminMenu} roleLabel="Administrator" />}
         >
           <Route index element={<Navigate to="/admin/overview" replace />} />
-          {placeholderRoutes(adminMenu)}
+          {toRoutes([...adminRoutes, ...transportRoutes])}
         </Route>
 
         <Route
@@ -35,7 +33,7 @@ export default function App() {
           element={<DashboardLayout menuItems={officerMenu} roleLabel="Government Officer" />}
         >
           <Route index element={<Navigate to="/officer/dashboard" replace />} />
-          {placeholderRoutes(officerMenu)}
+          {toRoutes([...monitoringRoutes, ...complianceRoutes])}
         </Route>
       </Routes>
     </BrowserRouter>
