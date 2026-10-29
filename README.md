@@ -66,7 +66,7 @@ Open http://localhost:5173. The temporary login lets you choose Administrator or
 - `web/src/layouts/` sidebar, top bar and menus
 - `web/src/components/` shared components
 - `web/src/services/api.js` connection to the backend
-- `web/mock/db.json` fake data (add your own collections, do not edit other people's)
+- `web/mock/data/<module>.json` fake data, one file per module. Add your collections to your own file, then restart `npm run mock`. `mock/db.json` is generated, so never edit it.
 - `web/src/App.jsx` collects every module's routes. Do not edit it. Add your pages in your own `features/<module>/routes.jsx`
 - `web/src/components/` shared pieces: StatusBadge, StatCard, PageHeader, DataTable. See them at /dev/components and use them instead of building your own.
 
